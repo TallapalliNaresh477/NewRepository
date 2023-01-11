@@ -1,0 +1,1 @@
+alert("You cann't add/update/delete if you are login with user credentials")

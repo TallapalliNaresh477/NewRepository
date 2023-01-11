@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Movie Management System</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Movie Management System</h1>
+		<hr>
+		<h2>Update Movies</h2>
+
+		<form action="#" th:action="@{/home/save}" th:object="${movies}"
+			method="POST">
+			
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{movie_id}" /> <input type="text"
+				th:field="*{movie_name}" placeholder="Movies Name"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{actor_of_movie}" placeholder="Actor Of Movie"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{genre_of_movie}" placeholder="Genre Of Movie"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{year_of_release}" placeholder="Year Of Release"
+				class="form-control mb-4 col-4">
+
+
+			<button type="submit" class="btn btn-info col-2">Save Movie</button>
+		</form>
+
+		<hr>
+
+		<a th:href="@{/home/}"> Back to Movies List</a>
+	</div>
+</body>
+</html>
